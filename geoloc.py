@@ -12,12 +12,12 @@ with open('data.csv', 'r', newline='\n') as data:
         for region in regions:
             try:
                 location = geolocator.geocode(region + ',' + 'małopolskie', country_codes='pl', timeout=30)
-                print(region + ', ' + location.address + ', ' + str(location.latitude) + ', ' + str(location.longitude),
+                print(region + ', ' + str(location.latitude) + ', ' + str(location.longitude),
                       file=geoloc)
             except AttributeError:
                 try:
                     location = geolocator.geocode(region + ',' + 'śląskie', country_codes='pl', timeout=30)
-                    print(region + ', ' + location.address + ', ' + str(location.latitude) + ', ' + str(location.longitude),
+                    print(region + ', ' + str(location.latitude) + ', ' + str(location.longitude),
                           file=geoloc)
                 except AttributeError:
                     pass

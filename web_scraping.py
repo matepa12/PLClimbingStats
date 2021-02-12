@@ -51,7 +51,7 @@ for page in range(1, 359):
         tabelka = soup.select(rf'#widok{index} > div > table > tbody > tr > td:nth-child(5)')
         tabelka = tabelka[0].text.strip("<>\n\t ")
 
-        dlugosc = re.search('(\d)m', tabelka)[1]
+        dlugosc = re.search('(\d+)m', tabelka)[1]
 
         ksztalt = soup.select(rf'#widok{index} > div > table > tbody > tr > td:nth-child(2)')
         ksztalt = ksztalt[0].text.strip("<>\n\t ")
